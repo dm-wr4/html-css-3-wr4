@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import "./components/reset.css"
+import './App.css'
+import NavBar from './components/NavBar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(){
+    super()
+
+    this.state = {
+      spinning: false
+    }
+    this.handleSpin = this.handleSpin.bind(this)
+  }
+
+  handleSpin (){
+    console.log('hit handlespin')
+    this.setState({
+      spinning: !this.state.spinning
+    })
+  }
+
+  render(){
+    console.log(this.state.spinning)
+    return(
+      <div>
+        <NavBar/>
+        <div className={this.state.spinning ? 'spinning-square square' : 'square'}  onClick={this.handleSpin}></div>
+        <div className='square-circle'></div>
+        <div className='heart'></div>
+      </div>
+    )
+  }
 }
-
-export default App;

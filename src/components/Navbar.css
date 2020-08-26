@@ -1,0 +1,77 @@
+.navbar {
+    height: 8vh;
+    width: 100%;
+    background-color: rgb(52, 58, 64);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.app-name {
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.navbar-button {
+    border: none;
+    background: transparent;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: white;
+    outline: none;
+}
+
+.navbar-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.navbar-icon {
+    display: none;
+    color: rgba(255,255,255,.1);
+    font-size: 20px;
+    border: 2px solid rgba(255,255,255,.1);
+    border-radius: 5px;
+    height: 35px;
+    width: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown {
+    width: 40vw;
+    height: 92vh;
+    background-color: rgb(52, 58, 64);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    right: 0;
+    top: 8vh;
+    box-sizing: border-box;
+}
+
+.dropdown > button {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+@media (max-width: 900px){
+    .navbar-icon {
+        display: flex;
+    }
+
+    .navbar-button-container {
+        display: none;
+    }
+}
+
+
